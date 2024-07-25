@@ -1,0 +1,24 @@
+name = "daily-puzzle-generator"
+main = "src/index.js"
+compatibility_date = "2024-07-25"
+account_id = "eaff53005189ac9f4576acc5c3c08cf3"
+
+workers_dev = false
+
+route = "https://api.ilovejasleen.com/*"
+
+custom_domain = true
+
+kv_namespaces = [
+  { binding = "KV_PUZZLES", id = "c39120f49120412f843cef9bcd903a7a" }
+]
+
+[triggers]
+crons = ["0 0 * * *"]
+
+[env.production]
+name = "daily-puzzle-generator-production"
+route = "https://api.ilovejasleen.com/*"
+kv_namespaces = [
+  { binding = "KV_PUZZLES", id = "c39120f49120412f843cef9bcd903a7a" }
+]
