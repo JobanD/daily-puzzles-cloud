@@ -151,12 +151,15 @@ function generateSudoku() {
 async function generateWordle() {
   console.log("Generating Wordle puzzle");
   try {
+    // Fetching up to 1000 5-letter words
     const response = await fetch(
-      "https://api.datamuse.com/words?sp=?????&max=1"
+      "https://api.datamuse.com/words?sp=?????&max=1000"
     );
     const words = await response.json();
     if (words.length > 0) {
-      return words[0].word.toUpperCase();
+      // Select a random word from the list
+      const randomIndex = Math.floor(Math.random() * words.length);
+      return words[randomIndex].word.toUpperCase();
     } else {
       throw new Error("No word found");
     }

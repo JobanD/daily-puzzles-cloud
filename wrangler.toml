@@ -14,7 +14,7 @@ kv_namespaces = [
 ]
 
 [triggers]
-crons = ["0 0 * * *"]
+crons = ["0 5 * * *"]
 
 [env.production]
 name = "daily-puzzle-generator-production"
